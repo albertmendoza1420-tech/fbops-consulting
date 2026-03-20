@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio — FB Ops Consulting</title>
+  <meta name="description" content="Menu development portfolio: artisan cheese platters, Italian sandwiches, artisan breads, and restaurant operations work.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍽️</text></svg>">
+  <style>
+    /* Page-specific additions */
+    .portfolio-hero {
+      background: var(--espresso);
+      padding: 160px 70px 80px;
+    }
+    .portfolio-hero h1 {
+      font-family: var(--ff-display);
+      font-size: clamp(40px, 5vw, 68px);
+      color: var(--cream);
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+    .portfolio-hero h1 em { color: var(--gold); font-style: italic; }
+    .portfolio-hero p {
+      font-size: 19px;
+      color: rgba(247,243,238,0.6);
+      max-width: 560px;
+      line-height: 1.75;
+      font-weight: 300;
+    }
+    .portfolio-hero-bar {
+      display: flex;
+      gap: 48px;
+      margin-top: 48px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .phb-item { display:flex; flex-direction:column; gap:4px; }
+    .phb-num { font-family:var(--ff-display); font-size:36px; color:var(--gold); }
+    .phb-lbl { font-family:var(--ff-ui); font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:rgba(247,243,238,0.4); }
+
+    .upload-note {
+      background: var(--sand);
+      border-left: 4px solid var(--gold);
+      padding: 14px 20px;
+      margin-bottom: 40px;
+      font-family: var(--ff-ui);
+      font-size: 13px;
+      color: #5C4A2A;
+      line-height: 1.6;
+    }
+    .upload-note strong { color: var(--rust); }
+
+    /* Case studies */
+    .case-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:32px; margin-top:60px; }
+    .case-card {
+      border: 1px solid var(--sand);
+      background: var(--white);
+      overflow: hidden;
+      transition: transform 0.3s var(--ease), box-shadow 0.3s;
+    }
+    .case-card:hover { transform:translateY(-6px); box-shadow:0 20px 60px rgba(28,16,8,0.1); }
+    .case-img {
+      height: 200px;
+      background: var(--espresso);
+      position: relative;
+      overflow: hidden;
+    }
+    .case-img img { width:100%; height:100%; object-fit:cover; }
+    .case-img-placeholder {
+      width:100%; height:100%;
+      display:flex; flex-direction:column;
+      align-items:center; justify-content:center;
+      gap:10px;
+    }
+    .case-img-placeholder .ci-icon { font-size:36px; opacity:0.25; }
+    .case-img-placeholder .ci-text { font-family:var(--ff-ui); font-size:11px; letter-spacing:2px; text-transform:uppercase; color:rgba(247,243,238,0.25); }
+    .case-body { padding:32px; }
+    .case-tag {
+      display:inline-block;
+      font-family:var(--ff-ui);
+      font-size:10px;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      font-weight:600;
+      padding:4px 12px;
+      margin-bottom:14px;
+    }
+    .ct-menu { background:#FDF3E3; color:#7A3800; }
+    .ct-ops  { background:#EAF0F7; color:#1F3A8C; }
+    .ct-fin  { background:#FEF0F0; color:#8B1A1A; }
+    .ct-hr   { background:#EAF5F0; color:#0A5C3A; }
+    .case-body h3 { font-family:var(--ff-display); font-size:22px; margin-bottom:10px; }
+    .case-body p  { font-size:15px; color:var(--warm); line-height:1.7; margin-bottom:20px; }
+    .case-results { display:flex; gap:24px; }
+    .cr-item { display:flex; flex-direction:column; gap:2px; }
+    .cr-num { font-family:var(--ff-display); font-size:24px; color:var(--rust); }
+    .cr-lbl { font-family:var(--ff-ui); font-size:11px; letter-spacing:1px; text-transform:uppercase; color:var(--warm); }
+
+    @media (max-width:768px) {
+      .portfolio-hero { padding:120px 24px 60px; }
+      .case-grid { grid-template-columns:1fr; }
+      .portfolio-hero-bar { flex-wrap:wrap; gap:24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav scrolled">
+  <a href="index.html" class="nav-logo">F&B<span>Ops</span></a>
+  <div class="nav-links">
+    <a href="index.html#services">Services</a>
+    <a href="portfolio.html" class="active">Portfolio</a>
+    <a href="index.html#team">Team</a>
+    <a href="index.html#process">How It Works</a>
+    <a href="contact.html" class="nav-cta">Get in Touch</a>
+  </div>
+  <div class="nav-burger" id="burger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <span class="mobile-close" id="mobile-close" style="position:absolute;top:32px;right:32px;font-size:32px;color:white;cursor:pointer;">✕</span>
+  <a href="index.html">Home</a>
+  <a href="index.html#services">Services</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="contact.html" style="color:#C89A3A;">Get in Touch →</a>
+</div>
+
+<!-- HERO -->
+<div class="portfolio-hero">
+  <p class="eyebrow reveal">Proof of Work</p>
+  <h1 class="reveal">Our <em>Portfolio</em><br>of F&amp;B Work</h1>
+  <p class="reveal">Real deliverables, real restaurants, real results. From artisan bread programs to full operations transformations.</p>
+  <div class="portfolio-hero-bar">
+    <div class="phb-item"><div class="phb-num">3</div><div class="phb-lbl">Menu Concepts</div></div>
+    <div class="phb-item"><div class="phb-num">8+</div><div class="phb-lbl">Service Areas</div></div>
+    <div class="phb-item"><div class="phb-num">SAR</div><div class="phb-lbl">GCC Focus</div></div>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<section class="section" id="gallery">
+  <p class="eyebrow reveal">Gallery</p>
+  <h2 class="section-title reveal">Menu Development Work</h2>
+  <p class="section-sub reveal">Cheese platters, Italian sandwiches, artisan breads, and more. Click any image to enlarge.</p>
+
+  <div class="upload-note reveal">
+    <strong>📸 To add your photos:</strong> Place your image files inside the <code>assets/images/</code> folder, then replace the placeholder items below with:<br>
+    <code>&lt;img src="assets/images/your-photo.jpg" alt="Description"&gt;</code> inside each <code>.gallery-item</code>.<br>
+    Each item also needs <code>data-src="assets/images/your-photo.jpg"</code> and <code>data-caption="Your caption"</code> for the lightbox.
+  </div>
+
+  <div class="gallery-filters reveal">
+    <button class="filter-btn active" data-filter="all">All Work</button>
+    <button class="filter-btn" data-filter="cheese">Cheese Platters</button>
+    <button class="filter-btn" data-filter="italian">Italian Sandwiches</button>
+    <button class="filter-btn" data-filter="bread">Artisan Breads</button>
+    <button class="filter-btn" data-filter="ops">Operations</button>
+  </div>
+
+  <div class="gallery-grid reveal">
+
+    <!-- ── CHEESE PLATTERS ── -->
+    <!-- To use: add data-src="assets/images/cheese-01.jpg" and place <img> inside -->
+    <div class="gallery-item" data-cat="cheese" data-src="" data-caption="Artisan Cheese Platter — Curated Selection">
+      <div class="gallery-placeholder">
+        <div class="gp-icon">🧀</div>
+        <div class="gp-label">Cheese Platters</div>
+      </div>
+      <div class="gallery-overlay">
+        <h4>Artisan Cheese Platter</h4>
+        <p>Cheese Platters</p>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-cat="cheese" data-src="" data-caption="Cheese Board with Accompaniments">
+      <div class="gallery-placeholder">
+        <div class="gp-icon">🧀</div>
+        <div class="gp-label">Cheese Platters</div>
+      </div>
+      <div class="gallery-overlay">
+        <h4>Cheese Board with Accompaniments</h4>
+        <p>Cheese Platters</p>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-cat="cheese" data-src="" data-caption="Signature Cheese Selection">
+      <div class="gallery-placeholder">
+        <div class="gp-icon">🧀</div>
+        <div class="gp-label">Cheese Platters</div>
+      </div>
+      <div class="gallery-overlay">
+        <h4>Signature Cheese Selection</h4>
+        <p>Cheese Platters</p>
+      </div>
+    </div>
+
+    <!-- ── ITALIAN SANDWICHES ── -->
+    <div class="gallery-item" data-cat="italian" data-src="" data-caption="Classic Porchetta Roll">
+      <div class="gallery-placeholder">
+        <div class="gp-icon">🥪</div>
+        <div class="gp-label">Italian Sandwiches</div>
+      </div>
+      <div class="gallery-overlay">
+        <h4>Classic Porchetta Roll</h4>
+        <p>Italian Sandwiches</p>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-cat="italian" data-src="" data-caption="Tramezzino with Prosciutto">
+      <div class="gallery-placeholder">
+        <div class="gp-icon">🥪</div>
+        <div class="gp-label">Italian Sandwiches</div>
+      </div>
+      <div class="gallery-overlay">
+        <h4>Tramezzino with Prosciutto</h4>
+        <p>Italian Sandwiches</p>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-cat="italian" data-src="" data-caption="Panini Concept — Deli Style">
+      <div class="gallery-placeholder">
+        <div class="gp-icon">🥪</div>
+        <div class="gp-label">Italian Sandwiches</div>
+      </div>
+      <div class="gallery-overlay">
+        <h4>Panini Concept — Deli Style</h4>
+        <p>Italian Sandwiches</p>
+      </div>
+    </div>
+
+    <!-- ── ARTISAN BREADS ── -->
+    <div class="gallery-item" data-cat="bread" data-src="" data-caption="Sourdough — Open Crumb">
+      <div class="gallery-placeholder">
+        <div class="gp-icon">🍞</div>
+        <div class="gp-label">Artisan Breads</div>
+      </div>
+      <div class="gallery-overlay">
+        <h4>Sourdough — Open Crumb</h4>
+        <p>Artisan Breads</p>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-cat="bread" data-src="" data-caption="Rosemary Focaccia">
+      <div class="gallery-placeholder">
+        <div class="gp-icon">🍞</div>
+        <div class="gp-label">Artisan Breads</div>
+      </div>
+      <div class="gallery-overlay">
+        <h4>Rosemary Focaccia</h4>
+        <p>Artisan Breads</p>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-cat="bread" data-src="" data-caption="Ciabatta &amp; Specialty Loaves">
+      <div class="gallery-placeholder">
+        <div class="gp-icon">🍞</div>
+        <div class="gp-label">Artisan Breads</div>
+      </div>
+      <div class="gallery-overlay">
+        <h4>Ciabatta &amp; Specialty Loaves</h4>
+        <p>Artisan Breads</p>
+      </div>
+    </div>
+
+    <!-- ── OPS WORK ── -->
+    <div class="gallery-item" data-cat="ops" data-src="" data-caption="Restaurant Operations Audit Report">
+      <div class="gallery-placeholder">
+        <div class="gp-icon">📋</div>
+        <div class="gp-label">Operations Work</div>
+      </div>
+      <div class="gallery-overlay">
+        <h4>Operations Audit Report</h4>
+        <p>Operations</p>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-cat="ops" data-src="" data-caption="Menu Engineering Matrix">
+      <div class="gallery-placeholder">
+        <div class="gp-icon">📊</div>
+        <div class="gp-label">Operations Work</div>
+      </div>
+      <div class="gallery-overlay">
+        <h4>Menu Engineering Matrix</h4>
+        <p>Operations</p>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-cat="ops" data-src="" data-caption="Financial Model Dashboard">
+      <div class="gallery-placeholder">
+        <div class="gp-icon">💰</div>
+        <div class="gp-label">Financial Work</div>
+      </div>
+      <div class="gallery-overlay">
+        <h4>Financial Model Dashboard</h4>
+        <p>Operations</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section class="section section-alt" id="case-studies">
+  <p class="eyebrow reveal">Case Studies</p>
+  <h2 class="section-title reveal">Results we've delivered</h2>
+  <p class="section-sub reveal">Replace these placeholders with your real client stories. Each case study should show the challenge, what we did, and the measurable result.</p>
+
+  <div class="case-grid">
+
+    <div class="case-card reveal">
+      <div class="case-img">
+        <!-- <img src="assets/images/case-01.jpg" alt="Case Study 1"> -->
+        <div class="case-img-placeholder">
+          <div class="ci-icon">🍽️</div>
+          <div class="ci-text">Add case study image</div>
+        </div>
+      </div>
+      <div class="case-body">
+        <span class="case-tag ct-menu">Menu Engineering</span>
+        <h3>[Restaurant Name] — Menu Overhaul</h3>
+        <p>Briefly describe what the client's problem was, what you did, and how long it took. E.g.: "A casual dining restaurant in Riyadh was losing margin on 40% of their menu items. We ran a full menu engineering audit, eliminated 18 underperforming items, repriced 12 others, and redesigned the menu layout."</p>
+        <div class="case-results">
+          <div class="cr-item"><div class="cr-num">↓12%</div><div class="cr-lbl">Food Cost</div></div>
+          <div class="cr-item"><div class="cr-num">↑23%</div><div class="cr-lbl">Avg. Basket Size</div></div>
+          <div class="cr-item"><div class="cr-num">6 wks</div><div class="cr-lbl">Timeline</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-card reveal reveal-delay-2">
+      <div class="case-img">
+        <div class="case-img-placeholder">
+          <div class="ci-icon">🍞</div>
+          <div class="ci-text">Add case study image</div>
+        </div>
+      </div>
+      <div class="case-body">
+        <span class="case-tag ct-menu">Menu Development</span>
+        <h3>[Client Name] — Artisan Bread Program</h3>
+        <p>Describe the brief: e.g., "A new café concept in Jeddah needed a full artisan bread program built from scratch — sourdough, focaccia, and a signature sandwich range. We built the recipes, sourced equipment, trained the team, and launched within 5 weeks."</p>
+        <div class="case-results">
+          <div class="cr-item"><div class="cr-num">12</div><div class="cr-lbl">New SKUs</div></div>
+          <div class="cr-item"><div class="cr-num">5 wks</div><div class="cr-lbl">To Launch</div></div>
+          <div class="cr-item"><div class="cr-num">4.7★</div><div class="cr-lbl">Platform Rating</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-card reveal">
+      <div class="case-img">
+        <div class="case-img-placeholder">
+          <div class="ci-icon">📊</div>
+          <div class="ci-text">Add case study image</div>
+        </div>
+      </div>
+      <div class="case-body">
+        <span class="case-tag ct-fin">Financial Modeling</span>
+        <h3>[Client Name] — 3-Statement Model</h3>
+        <p>E.g.: "A multi-branch F&amp;B group was operating without a financial model, making expansion decisions on intuition. We built a full 3-statement model across 3 branches with scenario modeling and an investor-ready presentation."</p>
+        <div class="case-results">
+          <div class="cr-item"><div class="cr-num">3</div><div class="cr-lbl">Branches Modeled</div></div>
+          <div class="cr-item"><div class="cr-num">SAR 2M+</div><div class="cr-lbl">Capital Raised</div></div>
+          <div class="cr-item"><div class="cr-num">3 wks</div><div class="cr-lbl">Timeline</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-card reveal reveal-delay-2">
+      <div class="case-img">
+        <div class="case-img-placeholder">
+          <div class="ci-icon">👥</div>
+          <div class="ci-text">Add case study image</div>
+        </div>
+      </div>
+      <div class="case-body">
+        <span class="case-tag ct-hr">HR &amp; Manpower</span>
+        <h3>[Client Name] — Manpower Modeling</h3>
+        <p>E.g.: "A QSR chain in Riyadh was spending 38% of revenue on labor with no scheduling model. We built a full manpower model, sourced 12 kitchen staff from the Philippines, and implemented a new scheduling system that reduced labor cost to 28%."</p>
+        <div class="case-results">
+          <div class="cr-item"><div class="cr-num">↓10%</div><div class="cr-lbl">Labor Cost</div></div>
+          <div class="cr-item"><div class="cr-num">12</div><div class="cr-lbl">Staff Sourced</div></div>
+          <div class="cr-item"><div class="cr-num">4 wks</div><div class="cr-lbl">Timeline</div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section-dark" style="text-align:center;">
+  <p class="eyebrow reveal" style="justify-content:center;">Ready to Work Together?</p>
+  <h2 class="section-title reveal" style="max-width:600px;margin:0 auto 20px;">Your restaurant could be the next case study.</h2>
+  <p class="section-sub reveal" style="margin:0 auto 48px;">Book a free 30-minute discovery call — no pressure, just a conversation.</p>
+  <div class="reveal">
+    <a href="contact.html" class="btn-primary">Book a Discovery Call →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo">F&B<span>Ops</span> Consulting</div>
+      <p>Restaurant operations, menu engineering, HR, and financial consulting for F&amp;B operators in Saudi Arabia and the GCC.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="index.html#services">Operations Strategy</a></li>
+        <li><a href="index.html#services">Menu Engineering</a></li>
+        <li><a href="index.html#services">HR &amp; Manpower</a></li>
+        <li><a href="index.html#services">Financial Modeling</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="index.html#team">Team</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 FB Ops Consulting · Riyadh, Saudi Arabia</p>
+    <div class="footer-socials">
+      <a href="#" title="LinkedIn">in</a>
+      <a href="#" title="WhatsApp">W</a>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a class="whatsapp-btn" href="https://wa.me/966XXXXXXXXX" target="_blank" rel="noopener">
+  <div class="whatsapp-tooltip">Chat on WhatsApp</div>
+  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.833.737 5.494 2.03 7.8L0 32l8.418-2.009A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.28 13.28 0 01-6.776-1.853l-.485-.29-5.004 1.194 1.23-4.878-.318-.502A13.28 13.28 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.268-9.922c-.398-.199-2.358-1.163-2.724-1.295-.366-.133-.633-.199-.9.199-.266.398-1.031 1.295-1.264 1.562-.232.266-.465.299-.863.1-.398-.2-1.681-.619-3.203-1.974-1.183-1.055-1.982-2.359-2.214-2.757-.232-.398-.025-.614.175-.812.18-.179.398-.465.598-.697.199-.232.265-.398.398-.664.133-.266.066-.499-.033-.697-.1-.199-.9-2.166-1.232-2.963-.325-.78-.655-.674-.9-.686l-.763-.013c-.266 0-.697.1-1.063.499-.366.398-1.396 1.363-1.396 3.325s1.43 3.858 1.629 4.124c.2.265 2.815 4.295 6.823 6.026.954.412 1.697.658 2.278.842.957.304 1.828.261 2.516.158.767-.114 2.358-.964 2.69-1.896.333-.931.333-1.729.233-1.896-.1-.166-.366-.265-.765-.465z"/></svg>
+</a>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-inner">
+    <button class="lightbox-nav lightbox-prev" id="lb-prev">‹</button>
+    <button class="lightbox-nav lightbox-next" id="lb-next">›</button>
+    <span class="lightbox-close" id="lb-close">✕</span>
+    <img class="lightbox-img" id="lb-img" src="" alt="">
+    <p class="lightbox-caption" id="lb-caption"></p>
+  </div>
+</div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

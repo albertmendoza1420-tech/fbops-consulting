@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — FB Ops Consulting</title>
+  <meta name="description" content="Book a free discovery call or send an inquiry. F&B Operations Consulting based in Riyadh, Saudi Arabia.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍽️</text></svg>">
+  <style>
+    .contact-hero {
+      background: var(--espresso);
+      padding: 160px 70px 80px;
+    }
+    .contact-hero h1 {
+      font-family: var(--ff-display);
+      font-size: clamp(40px, 5vw, 64px);
+      color: var(--cream);
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+    .contact-hero h1 em { color:var(--gold); font-style:italic; }
+    .contact-hero p {
+      font-size: 19px;
+      color: rgba(247,243,238,0.6);
+      max-width: 500px;
+      line-height: 1.75;
+      font-weight: 300;
+    }
+
+    .contact-main { padding: 80px 70px; }
+    .contact-grid { display:grid; grid-template-columns:1fr 1.2fr; gap:80px; align-items:start; }
+
+    /* Left panel */
+    .contact-panel h2 { font-family:var(--ff-display); font-size:32px; margin-bottom:16px; }
+    .contact-panel > p { font-size:17px; color:var(--warm); line-height:1.75; margin-bottom:40px; }
+
+    .cd-row { display:flex; gap:16px; align-items:flex-start; padding:20px 0; border-bottom:1px solid var(--sand); }
+    .cd-row:first-of-type { border-top:1px solid var(--sand); }
+    .cd-ico { font-size:22px; flex-shrink:0; margin-top:2px; }
+    .cd-lbl { font-family:var(--ff-ui); font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--warm); margin-bottom:4px; }
+    .cd-val { font-size:17px; color:var(--espresso); }
+    .cd-val a { color:var(--rust); text-decoration:underline; text-decoration-color:rgba(139,37,0,0.3); transition:color 0.2s; }
+    .cd-val a:hover { color:var(--rust-lt); }
+
+    .services-quick { margin-top:40px; }
+    .services-quick h3 { font-family:var(--ff-ui); font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--warm); margin-bottom:16px; }
+    .svc-quick-list { display:flex; flex-direction:column; gap:0; }
+    .svc-quick-item { padding:10px 0; border-bottom:1px solid var(--sand); display:flex; justify-content:space-between; align-items:center; font-size:15px; color:var(--espresso); }
+    .svc-quick-item span { font-family:var(--ff-ui); font-size:12px; color:var(--rust); font-weight:500; }
+
+    /* Form panel */
+    .form-panel { }
+    .form-panel h2 { font-family:var(--ff-display); font-size:28px; margin-bottom:8px; }
+    .form-panel > .form-sub { font-size:15px; color:var(--warm); margin-bottom:36px; font-style:italic; }
+
+    /* Formspree note */
+    .formspree-note {
+      background: #FDF3E3;
+      border:1px solid #E8C97A;
+      padding:14px 18px;
+      margin-bottom:28px;
+      font-family:var(--ff-ui);
+      font-size:13px;
+      color:#7A5800;
+      line-height:1.6;
+    }
+    .formspree-note a { color:var(--rust); font-weight:600; }
+
+    @media (max-width:900px) {
+      .contact-hero { padding:120px 24px 60px; }
+      .contact-main { padding:56px 24px; }
+      .contact-grid { grid-template-columns:1fr; gap:48px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav scrolled">
+  <a href="index.html" class="nav-logo">F&B<span>Ops</span></a>
+  <div class="nav-links">
+    <a href="index.html#services">Services</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="index.html#team">Team</a>
+    <a href="index.html#process">How It Works</a>
+    <a href="contact.html" class="nav-cta active">Get in Touch</a>
+  </div>
+  <div class="nav-burger" id="burger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <span class="mobile-close" id="mobile-close" style="position:absolute;top:32px;right:32px;font-size:32px;color:white;cursor:pointer;">✕</span>
+  <a href="index.html">Home</a>
+  <a href="index.html#services">Services</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="contact.html" style="color:#C89A3A;">Contact →</a>
+</div>
+
+<!-- HERO -->
+<div class="contact-hero">
+  <p class="eyebrow reveal">Let's Talk</p>
+  <h1 class="reveal">Start a <em>Conversation</em><br>about Your Restaurant.</h1>
+  <p class="reveal">Book a free 30-minute discovery call. No pitch — just a conversation about where you are and where you want to go.</p>
+</div>
+
+<!-- MAIN -->
+<div class="contact-main">
+  <div class="contact-grid">
+
+    <!-- LEFT: Info -->
+    <div class="contact-panel reveal">
+      <h2>Get in touch</h2>
+      <p>Based in Riyadh, we work with restaurants across Saudi Arabia and the GCC — and remotely with operators worldwide.</p>
+
+      <div class="cd-row">
+        <div class="cd-ico">📍</div>
+        <div>
+          <div class="cd-lbl">Location</div>
+          <div class="cd-val">Riyadh, Saudi Arabia</div>
+        </div>
+      </div>
+      <div class="cd-row">
+        <div class="cd-ico">✉️</div>
+        <div>
+          <div class="cd-lbl">Email</div>
+          <!-- Replace with your real email -->
+          <div class="cd-val"><a href="mailto:hello@fbopsconsulting.com">hello@fbopsconsulting.com</a></div>
+        </div>
+      </div>
+      <div class="cd-row">
+        <div class="cd-ico">💬</div>
+        <div>
+          <div class="cd-lbl">WhatsApp</div>
+          <!-- Replace with your real WhatsApp number -->
+          <div class="cd-val"><a href="https://wa.me/966XXXXXXXXX" target="_blank">+966 XX XXX XXXX</a></div>
+        </div>
+      </div>
+      <div class="cd-row">
+        <div class="cd-ico">🔗</div>
+        <div>
+          <div class="cd-lbl">LinkedIn</div>
+          <!-- Replace with your LinkedIn URL -->
+          <div class="cd-val"><a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></div>
+        </div>
+      </div>
+      <div class="cd-row">
+        <div class="cd-ico">⏱️</div>
+        <div>
+          <div class="cd-lbl">Response Time</div>
+          <div class="cd-val">Within 24 hours</div>
+        </div>
+      </div>
+
+      <div class="services-quick">
+        <h3>Starting from</h3>
+        <div class="svc-quick-list">
+          <div class="svc-quick-item">Operations Audit <span>SAR 12,000</span></div>
+          <div class="svc-quick-item">Menu Engineering <span>SAR 8,000</span></div>
+          <div class="svc-quick-item">Menu Development <span>SAR 10,000</span></div>
+          <div class="svc-quick-item">HR &amp; Manpower Modeling <span>SAR 9,000</span></div>
+          <div class="svc-quick-item">3-Statement Financial Model <span>SAR 14,000</span></div>
+          <div class="svc-quick-item">Aggregator Management <span>SAR 7,500</span></div>
+          <div class="svc-quick-item">Fractional Ops Director <span>SAR 12K/month</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Form -->
+    <div class="form-panel reveal reveal-delay-2">
+      <h2>Send an Inquiry</h2>
+      <p class="form-sub">Fill in the form and we'll be in touch within 24 hours.</p>
+
+      <!--
+        ════════════════════════════════════════════
+        FORMSPREE SETUP (takes 2 minutes):
+        1. Go to https://formspree.io and create a free account
+        2. Create a new form — it gives you a form endpoint like:
+           https://formspree.io/f/abcdefgh
+        3. Replace "YOUR_FORMSPREE_ID" below with that ID (just the ID, e.g. "abcdefgh")
+        4. Done — all submissions go straight to your email
+        ════════════════════════════════════════════
+      -->
+      <div class="formspree-note">
+        ⚙️ <strong>Setup required:</strong> This form uses <a href="https://formspree.io" target="_blank">Formspree</a> (free).
+        Create an account → copy your form ID → replace <code>YOUR_FORMSPREE_ID</code> in the form action below.
+        Takes 2 minutes. After setup, all inquiries go directly to your email.
+      </div>
+
+      <form id="inquiry-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="fname">First Name *</label>
+            <input type="text" id="fname" name="first_name" required placeholder="Ahmad">
+          </div>
+          <div class="form-group">
+            <label for="lname">Last Name *</label>
+            <input type="text" id="lname" name="last_name" required placeholder="Al-Rashidi">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="email" required placeholder="ahmad@restaurant.com">
+        </div>
+
+        <div class="form-group">
+          <label for="whatsapp">WhatsApp Number</label>
+          <input type="tel" id="whatsapp" name="whatsapp" placeholder="+966 50 XXX XXXX">
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="brand">Restaurant / Brand Name *</label>
+            <input type="text" id="brand" name="brand" required placeholder="Your Brand">
+          </div>
+          <div class="form-group">
+            <label for="concept">Concept Type</label>
+            <input type="text" id="concept" name="concept" placeholder="e.g. Casual Dining, QSR, Café">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="service">Service You're Interested In *</label>
+          <select id="service" name="service" required>
+            <option value="" disabled selected>Select a service…</option>
+            <option>Restaurant Operations Strategy</option>
+            <option>Menu Engineering</option>
+            <option>Concept Menu Development (Cheese / Italian / Breads)</option>
+            <option>HR Hiring &amp; Manpower Modeling</option>
+            <option>3-Statement Financial Modeling</option>
+            <option>Aggregator &amp; Platform Management</option>
+            <option>Supplier Sourcing &amp; Procurement</option>
+            <option>Financial Management Training for Managers</option>
+            <option>Full Ops Transformation (Multiple Services)</option>
+            <option>Fractional Ops Director (Monthly Retainer)</option>
+            <option>Not Sure Yet — Let's Talk</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="branches">Number of Branches</label>
+          <select id="branches" name="branches">
+            <option value="" disabled selected>Select…</option>
+            <option>1 branch (just getting started)</option>
+            <option>2–3 branches</option>
+            <option>4–10 branches</option>
+            <option>10+ branches</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="challenge">What's Your Biggest Challenge Right Now?</label>
+          <textarea id="challenge" name="challenge" placeholder="Tell us what's not working — the more detail the better. We read every message personally."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="budget">Approximate Budget (SAR)</label>
+          <select id="budget" name="budget">
+            <option value="" disabled selected>Select range…</option>
+            <option>Below SAR 10,000</option>
+            <option>SAR 10,000 – 25,000</option>
+            <option>SAR 25,000 – 50,000</option>
+            <option>Above SAR 50,000</option>
+            <option>Open / Let's discuss</option>
+          </select>
+        </div>
+
+        <!-- Honeypot spam field — leave blank -->
+        <input type="text" name="_gotcha" style="display:none">
+        <input type="hidden" name="_subject" value="New Inquiry — FB Ops Consulting Website">
+
+        <button type="submit" class="form-submit">Send Inquiry →</button>
+      </form>
+
+      <div id="form-success" class="form-success">
+        <div style="font-size:48px;margin-bottom:16px;">✅</div>
+        <h3>Message received.</h3>
+        <p>We'll be in touch within 24 hours. In the meantime, feel free to reach out on WhatsApp for a faster response.</p>
+        <br>
+        <a href="https://wa.me/966XXXXXXXXX" target="_blank" class="btn-primary" style="display:inline-block;margin-top:8px;">Open WhatsApp →</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo">F&B<span>Ops</span> Consulting</div>
+      <p>Restaurant operations, menu engineering, HR, and financial consulting for F&amp;B operators in Saudi Arabia and the GCC.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="index.html#services">Operations Strategy</a></li>
+        <li><a href="index.html#services">Menu Engineering</a></li>
+        <li><a href="index.html#services">HR &amp; Manpower</a></li>
+        <li><a href="index.html#services">Financial Modeling</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="index.html#team">Team</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 FB Ops Consulting · Riyadh, Saudi Arabia</p>
+    <div class="footer-socials">
+      <a href="#" title="LinkedIn">in</a>
+      <a href="#" title="WhatsApp">W</a>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a class="whatsapp-btn" href="https://wa.me/966XXXXXXXXX" target="_blank" rel="noopener">
+  <div class="whatsapp-tooltip">Chat on WhatsApp</div>
+  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.833.737 5.494 2.03 7.8L0 32l8.418-2.009A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.28 13.28 0 01-6.776-1.853l-.485-.29-5.004 1.194 1.23-4.878-.318-.502A13.28 13.28 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.268-9.922c-.398-.199-2.358-1.163-2.724-1.295-.366-.133-.633-.199-.9.199-.266.398-1.031 1.295-1.264 1.562-.232.266-.465.299-.863.1-.398-.2-1.681-.619-3.203-1.974-1.183-1.055-1.982-2.359-2.214-2.757-.232-.398-.025-.614.175-.812.18-.179.398-.465.598-.697.199-.232.265-.398.398-.664.133-.266.066-.499-.033-.697-.1-.199-.9-2.166-1.232-2.963-.325-.78-.655-.674-.9-.686l-.763-.013c-.266 0-.697.1-1.063.499-.366.398-1.396 1.363-1.396 3.325s1.43 3.858 1.629 4.124c.2.265 2.815 4.295 6.823 6.026.954.412 1.697.658 2.278.842.957.304 1.828.261 2.516.158.767-.114 2.358-.964 2.69-1.896.333-.931.333-1.729.233-1.896-.1-.166-.366-.265-.765-.465z"/></svg>
+</a>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
